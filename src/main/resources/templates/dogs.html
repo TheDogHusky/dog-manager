@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{fragments/layout :: layout (~{::body},'index')}">
+
+<body>
+	<div th:each="dog: ${dogs}" class="card"
+		style="width: 18rem; display: inline; float: lef; margin: 10px">
+
+		<div class="card-body">
+			<h5 class="card-title" th:text="${dog.name}"></h5>
+			<h6 class="card-subtitle mb-2 text-muted" th:text="C'est un chien vitruel. Ne croyez pas que c'en ai un vrai !"></h6>
+			<p class="card-text" th:text="Nom: ${dog.name}"></p>
+			<a href="#" class="card-link">Card link</a> <a href="#"
+				class="card-link">Another link</a>
+		</div>
+
+	</div>
+</body>
+</html>

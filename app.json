@@ -1,0 +1,5 @@
+{
+  "name": "Dog Manager",
+  "description": "Gestion de chiens",
+  "addons": [ "heroku-postgresql" ]
+}
