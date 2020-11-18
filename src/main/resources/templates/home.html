@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{fragments/layout :: layout (~{::body},'index')}">
+
+<body>
+	<div class="jumbotron">
+	  <h1 class="display-4">Bienvenue sur Dog-Manager</h1>
+	  <p class="lead">Ce site sert à créer des chiens virtuels et les afficher sous la forme de cartes, et peut-être prochainement avec des images ;).</p>
+	  <hr class="my-4">
+	  <p>Qu'attendez-vous ? Affichez les chiens déjà créés en cliquant sur le bouton suivant !</p>
+	  <a class="btn btn-primary btn-lg" href="/dogs" role="button">Go chiens !</a>
+	</div>
+</body>
+</html>
