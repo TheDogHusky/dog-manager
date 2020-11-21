@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{fragments/layout :: layout (~{::body},'index')}">
+
+<body>
+<div class="container">
+<form action="" method="post">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Nom</label>
+    <input class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <small id="emailHelp" class="form-text text-muted">Le nom ne doit pas contenir d'espaces ou de caractères autre que des lettres !</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Race</label>
+    <input class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Age</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+      <option>6</option>
+      <option>7</option>
+      <option>8</option>
+    </select>
+  </div>
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">A t-il un maitre ? (Cocher si oui)</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Ajouter le chien !</button>
+</form>
+</div>
+</body>
+</html>
