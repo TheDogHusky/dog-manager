@@ -4,14 +4,14 @@ public class Dog {
 	
 	String name;
 	String breed;
-	int age;
-	boolean isOwned;
+	Integer age;
+	Boolean owned;
 	
-	public Dog(String name, String breed, int age, boolean isOwned) {
+	public Dog(String name, String breed, Integer age, Boolean isOwned) {
 		this.name = name;
 		this.breed = breed;
 		this.age = age;
-		this.isOwned = isOwned;
+		this.owned = isOwned;
 	}
 	
 	
@@ -38,34 +38,28 @@ public class Dog {
 		this.breed = breed;
 	}
 
-
-
-	public int getAge() {
+	public Integer getAge() {
 		return age;
 	}
 
-
-
-	public void setAge(int age) {
+	public void setAge(Integer age) {
 		this.age = age;
 	}
 
-
-
-	public boolean isOwned() {
-		return isOwned;
+	public Boolean isOwned() {
+		return owned;
 	}
 
-
-
-	public void setOwned(boolean isOwned) {
-		this.isOwned = isOwned;
+	public Boolean getOwned() {
+		return owned;
 	}
 
-
+	public void setOwned(Boolean isOwned) {
+		this.owned = isOwned;
+	}
 
 	@Override
 	public String toString() {  
-		return "\n--\nINFOS CHIEN - " + name + " \nRace: " + breed + " \n�ge: " + age + " \nA-t-il un Maitre: " + isOwned;
+		return "\n--\nINFOS CHIEN - " + name + " \nRace: " + breed + " \n�ge: " + age + " \nA-t-il un Maitre: " + owned;
 	}	
 }

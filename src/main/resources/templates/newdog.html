@@ -4,32 +4,32 @@
 
 <body>
 <div class="container">
-<form action="" method="post">
+<form action="#" method="post" th:action="@{/newdog}" th:object="${dog}">
   <div class="form-group">
-    <label for="exampleInputEmail1">Nom</label>
-    <input class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <label for="name">Nom</label>
+    <input class="form-control" th:field="*{name}" aria-describedby="emailHelp">
     <small id="emailHelp" class="form-text text-muted">Le nom ne doit pas contenir d'espaces ou de caractères autre que des lettres !</small>
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Race</label>
-    <input class="form-control" id="exampleInputPassword1">
+    <label for="breed">Race</label>
+    <input class="form-control" th:field="*{name}">
   </div>
   <div class="form-group">
-    <label for="exampleFormControlSelect1">Age</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>1</option>
-      <option>2</option>
+    <label for="age">Age</label>
+    <select class="form-control" th:field="*{age}" >
+      <option value="1">1</option>
+<!--      <option>2</option>
       <option>3</option>
       <option>4</option>
       <option>5</option>
       <option>6</option>
       <option>7</option>
-      <option>8</option>
+      <option>8</option>-->
     </select>
   </div>
   <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">A t-il un maitre ? (Cocher si oui)</label>
+    <input  type="checkbox" class="form-check-input" th:field="*{owned}" >
+    <label class="form-check-label" th:for="${#ids.next('owned')}">A t-il un maitre ? (Cocher si oui)</label>
   </div>
   <button type="submit" class="btn btn-primary">Ajouter le chien !</button>
 </form>
