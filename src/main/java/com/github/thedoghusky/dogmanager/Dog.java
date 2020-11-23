@@ -1,8 +1,15 @@
 package com.github.thedoghusky.dogmanager;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class Dog {
 	
+	@NotNull
+	@Size(min = 2, max = 28)
 	String name;
+	@NotNull
+	@Size(min = 2, max = 28)
 	String breed;
 	Integer age;
 	Boolean owned;
@@ -19,7 +26,6 @@ public class Dog {
 	public String getName() {
 		return name;
 	}
-
 
 
 	public void setName(String name) {

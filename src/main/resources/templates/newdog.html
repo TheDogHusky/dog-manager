@@ -8,23 +8,19 @@
   <div class="form-group">
     <label for="name">Nom</label>
     <input class="form-control" th:field="*{name}" aria-describedby="emailHelp">
-    <small id="emailHelp" class="form-text text-muted">Le nom ne doit pas contenir d'espaces ou de caractères autre que des lettres !</small>
+    <small th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Le nom ne doit pas contenir d'espaces ou de caractères autre que des lettres !</small>
+    <!-- <small id="emailHelp" class="form-text text-muted">Le nom ne doit pas contenir d'espaces ou de caractères autre que des lettres !</small> -->
   </div>
   <div class="form-group">
     <label for="breed">Race</label>
-    <input class="form-control" th:field="*{name}">
+    <input class="form-control" th:field="*{breed}">
+    <small th:if="${#fields.hasErrors('breed')}" th:errors="*{breed}">Le nom ne doit pas contenir d'espaces ou de caractères autre que des lettres !</small>
   </div>
   <div class="form-group">
     <label for="age">Age</label>
     <select class="form-control" th:field="*{age}" >
-      <option value="1">1</option>
-<!--      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-      <option>6</option>
-      <option>7</option>
-      <option>8</option>-->
+	  <option value="" selected="selected"></option>
+      <option th:each="dogAge: ${ages}" th:value="${dogAge}" th:text="${dogAge}" />
     </select>
   </div>
   <div class="form-group form-check">

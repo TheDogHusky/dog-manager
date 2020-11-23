@@ -3,14 +3,14 @@ package com.github.thedoghusky.dogmanager;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class DogsController {
@@ -30,13 +30,16 @@ public class DogsController {
 	
 	@GetMapping("/newdog")
 	public String newDog(Model model) {
-		model.addAttribute("dog", new Dog("", "", 1, false));
+		model.addAttribute("dog", new Dog(null, null, null, false));
+		model.addAttribute("ages", new int[]{1, 2, 3, 4, 5, 6, 7});
+		
 		return "newdog";
 	}
 	
 	@PostMapping(path = "/newdog", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-	public String createDog(Dog newDog, Model model, BindingResult bindingResult) {
+	public String createDog(@Valid Dog newDog, BindingResult bindingResult, Model model) {
 		if (bindingResult.hasErrors()) {
+			model.addAttribute("ages", new int[]{1, 2, 3, 4, 5, 6, 7});
 			return "newdog";
 		}
 
