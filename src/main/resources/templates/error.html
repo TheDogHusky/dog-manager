@@ -1,0 +1,16 @@
+<!DOCTYPE HTML >
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{fragments/layout :: layout (~{::body},'index')}">
+
+<body>
+	<div class="jumbotron">
+	  <h1 class="display-4">Oups !!</h1>
+	  <p class="lead">Une erreur s'est produite...<br/>
+	  Les développeurs sont déjà sur le pont !</p>
+	  <img src="/images/husky.jpg" />
+	  <hr class="my-4">
+	  <p>Ne restez pas là ! Affichez les chiens déjà créés en cliquant sur le bouton suivant !</p>
+	  <a class="btn btn-primary btn-lg" href="/dogs" role="button">Go chiens !</a>
+	</div>
+</body>
+</html>
