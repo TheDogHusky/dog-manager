@@ -3,9 +3,20 @@
 	th:replace="~{fragments/layout :: layout (~{::body},'index')}">
 
 <body>
-	<div th:each="dog: ${dogs}" class="card shadow p-3 mb-5 bg-white rounded"
+	<a href="/newdog">
+	<div class="card shadow p-3 mb-5 bg-white rounded dog-card" style="width: 18rem; display: inline; float: left; margin: 10px;">
+	  <svg width="15em" height="10em" viewBox="0 0 16 16" class="bi bi-plus-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+		  <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+		  <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+		</svg>
+	  <div class="card-body">
+	    <p class="card-text">Cliquez ici pour ajouter un chien !</p>
+	  </div>
+    </div>
+    </a>
+	<div th:each="dog: ${dogs}" class="card shadow p-3 mb-5 bg-white rounded dog-card"
 		style="width: 18rem; display: inline; float: left; margin: 10px">
-
+		
 		<div class="card-body">
 			<h5 class="card-title" th:text="${dog.name}"></h5>
 			<h6 class="card-subtitle mb-2 text-muted">C'est un chien virtuel. Ne croyez pas que c'est un vrai !</h6>
@@ -15,8 +26,8 @@
 				<li>Age : <span th:text="${dog.age}" /></li>
 				<li>A un maitre : <span th:text="${dog.isOwned}" /></li>
 			</ul>
-			<a href="#" class="card-link">Card link</a> <a href="#"
-				class="card-link">Another link</a>
+			<!--  <a href="#" class="card-link">Card link</a> <a href="#"
+				class="card-link">Another link</a> -->
 		</div>
 
 	</div>
